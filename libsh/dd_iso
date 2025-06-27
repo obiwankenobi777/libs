@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+if [[ $# -lt 2 ]]; then
+    echo "Parametros ausentes!"
+    echo "Entre com o nome da iso e o local e o caminho do disco"
+    exit 1
+
+elif [[ $# -eq 2 ]]; then
+    sudo dd if="$1" of="$2" bs=4M status=progress oflag=sync
+
+elif [[ $# -gt 2 ]]; then
+    echo "Paremetros em demasia"
+    echo "Entre com o nome da iso e o local e o caminho do disco"
+    exit 1
+fi
+exit 0

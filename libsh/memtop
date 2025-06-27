@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+
+# Faz uma análise simples da memória usada pelos processos em execução e mostra
+# os "$1" processos que mais consomem memória, ordenados de forma crescente.
+
+if [[ $# -lt 1 ]]; then
+    echo "Parametro ausente"
+    exit 1
+fi
+
+if [[ $# -ge 2 ]]; then
+    echo "Necessário apenas um parametro: número de processos a serem listados"
+    exit 1
+fi
+
+foo() {
+    printf "PID\t\tMemory(MB)\tCommand\n"
+    ps aux | awk '{ printf "%s\t\t%.2f\t\t%s\n", $2, $6/1024, $11 }' | sort -n -k2 | tail -n "$1"
+}
+
+if [[ $1 -gt 30 ]]; then
+    foo "$1"| less
+else 
+    foo "$1"
+fi

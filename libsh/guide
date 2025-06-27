@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+
+if [[ $# -lt 1 ]]; then
+    echo "Missing parameter"
+    exit 1
+fi
+
+MAN="$HOME/code/guides/$1"
+
+if [[ -e $MAN ]]; then
+    less "$MAN"
+
+elif [[ $1 = "db" ]] || [[ $1 = "sql" ]]; then
+    less "$HOME/code/guides/sql"
+
+elif [[ $1 = "sh" ]] || [[ $1 = "bash" ]]; then
+    less "$HOME/code/guides/sh"
+
+elif [[ $1 = "rs" ]] || [[ $1 = "rust" ]]; then
+    less "$HOME/code/guides/rs"
+
+elif [[ $1 = "py" ]] || [[ $1 = "python" ]]; then
+    less "$HOME/code/guides/py"
+
+else 
+    echo "Doesn't exists MAN of $1"
+    exit 1 
+
+fi

@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+total=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+available=$(grep MemAvailable /proc/meminfo | awk '{print $2}')
+
+used=$((total - available))
+
+percent=$(awk -v used="$used" -v total="$total" 'BEGIN {printf "%.2f", (used/total)*100}')
+
+echo "RAM: $percent%"
