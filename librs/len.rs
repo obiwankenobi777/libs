@@ -13,5 +13,5 @@ fn main() {
         sum += j.len();
     }
     println!("\nwords -> {}", args.len() - 1);
-    println!("characters -> {}", sum);
+    println!("characters -> {}\n", sum);
 }
