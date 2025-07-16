@@ -1,5 +1,12 @@
 use std::env;
 
+fn gcd(u: i128, v: i128) -> i128 {
+    if v > 0 {
+        gcd(v, u % v)
+    } else {
+        u
+    }
+} 
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() < 2 {
@@ -23,11 +30,4 @@ fn main() {
     println!("gcd({u}, {v}) = {}", gcd(u, v));
 
 }
-fn gcd(u: i128, v: i128) -> i128 {
-    if v > 0 {
-        gcd(v, u % v)
-    } else {
-        u
-    }
-} 
 
