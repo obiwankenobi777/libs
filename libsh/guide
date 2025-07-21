@@ -22,8 +22,8 @@ elif [[ $1 = "rs" ]] || [[ $1 = "rust" ]]; then
 elif [[ $1 = "py" ]] || [[ $1 = "python" ]]; then
     less "$HOME/code/guides/py"
 
-elif [[ $1 = "std" ]]; then
-    less "$HOME/code/guides/std"
+elif [[ $1 == "js" ]] || [[ $1 == "javascript" ]]; then
+    less "$HOME/code/guides/js"
 
 else 
     echo "Doesn't exists MAN of $1"
