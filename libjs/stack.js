@@ -1,6 +1,7 @@
 class Stack {
   #items;
   #count;
+
   constructor() {
     this.#count = 0;
     this.#items = {};
