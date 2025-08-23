@@ -31,8 +31,8 @@ fn main() {
         println!("The number {} isn't a prime number!", number);
         println!("\nTotal divisors: {}", divisors.len());
         println!("{:?}\n", divisors);
-    }
-    else {
+    } else {
         println!("The number {} is a prime number!", number);
     }
+    println!();
 }

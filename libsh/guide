@@ -1,29 +1,32 @@
 #!/usr/bin/bash
 
-if [[ $# -lt 1 ]]; then
-    echo "Missing parameter"
+if [[ $# -eq 0 ]]; then
+    ls $HOME/.code/guides/
     exit 1
 fi
 
-MAN="$HOME/code/guides/$1"
+MAN="$HOME/.code/guides/$1"
 
 if [[ -e $MAN ]]; then
     less "$MAN"
 
 elif [[ $1 = "db" ]] || [[ $1 = "sql" ]]; then
-    less "$HOME/code/guides/sql"
+    less "$HOME/.code/guides/sql"
 
 elif [[ $1 = "sh" ]] || [[ $1 = "bash" ]]; then
-    less "$HOME/code/guides/sh"
+    less "$HOME/.code/guides/sh"
 
 elif [[ $1 = "rs" ]] || [[ $1 = "rust" ]]; then
-    less "$HOME/code/guides/rs"
+    less "$HOME/.code/guides/rs"
 
 elif [[ $1 = "py" ]] || [[ $1 = "python" ]]; then
-    less "$HOME/code/guides/py"
+    less "$HOME/.code/guides/py"
 
 elif [[ $1 == "js" ]] || [[ $1 == "javascript" ]]; then
-    less "$HOME/code/guides/js"
+    less "$HOME/.code/guides/js"
+
+elif [[ $1 = "mind" ]]; then
+    less "$HOME/.code/guides/mind"
 
 else 
     echo "Doesn't exists MAN of $1"
