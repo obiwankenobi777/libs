@@ -17,7 +17,7 @@ elif [[ -f $1.cpp ]]; then
     g++ -Wall -Wextra -Wpedantic -O2 -std=c++23 -o "$1" "$1.cpp" && ./"$1"
     exit
 
-elif [[ -f $1.rs ]]; then
+elif [[ -f "$1".rs ]]; then
     rustc "$1.rs" && ./"$1"
     exit
 

@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+if [[ -f "$1".rs ]]; then
+	rustc "$1".rs
+	./"$1" ${@:2}
+fi

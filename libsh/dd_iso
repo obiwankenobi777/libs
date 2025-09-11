@@ -3,6 +3,7 @@
 if [[ $# -lt 2 ]]; then
     echo "Parametros ausentes!"
     echo "Entre com o nome da iso e o local e o caminho do disco"
+    echo "Exemplo: dd_iso archlinux.iso /dev/sdx"
     exit 1
 
 elif [[ $# -eq 2 ]]; then

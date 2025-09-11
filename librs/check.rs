@@ -1,7 +1,5 @@
-use std::env;
-
 fn main() {
-    let s: Vec<String> = env::args().collect();
+    let s: Vec<String> = std::env::args().collect();
     if s.len() < 3 {
         eprintln!("Error. 2 parameters are required!");
         std::process::exit(1);
