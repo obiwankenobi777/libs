@@ -28,6 +28,9 @@ elif [[ $1 == "js" ]] || [[ $1 == "javascript" ]]; then
 elif [[ $1 = "std" ]]; then
     less "$HOME/.code/guides/std"
 
+elif [[ $1 = "lua" ]]; then
+    less "$HOME/.code/guide/lua"
+
 else 
     echo "Doesn't exists MAN of $1"
     exit 1 
