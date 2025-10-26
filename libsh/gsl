@@ -1,3 +1,19 @@
 #!/usr/bin/bash
 
-gcc $1.c -o $1 -lgsl -lgslcblas -lm && ./$1
+if [[ "$#" -eq 0 ]]; then
+  echo "Missing Parameters" >&2
+  exit 1
+
+elif [[ -f "$1".c ]]; then
+  gcc -o "$1" "$1".c -lm -lgsl -lgslcblas && ./"$1"
+
+elif [[ -f "$1".cpp ]]; then
+  g++ -o "$1" "$1".cpp -lm -lgsl -lgslcblas && ./"$1"
+
+elif [[ ! -f "$1".c ]] || [[ ! -f "$1".cpp ]]; then
+    echo "Arquivo nao encontrado" >&2
+    exit 1
+fi
+
+exit 0
+

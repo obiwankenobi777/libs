@@ -31,6 +31,9 @@ elif [[ $1 = "std" ]]; then
 elif [[ $1 = "lua" ]]; then
     less "$HOME/.code/guide/lua"
 
+elif [[ $1 = "vi" ]]; then
+    less "$HOME/.code/guide/vi"
+
 else 
     echo "Doesn't exists MAN of $1"
     exit 1 

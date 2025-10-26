@@ -72,7 +72,7 @@ void push(stack *s, long long int i) {
 }
 
 void printStack(stack *s) {
-    printf("\nTotal divisors: %d\n", s->top);
+    printf("\nTotal divisors: %lld\n", s->top);
 
     long long i = 0;
     putchar('[');

@@ -1,0 +1,43 @@
+#!/usr/bin/bash
+#
+
+if [[ "$#" -gt 0 ]]; then
+  echo "This script does not accept input parameters!"
+  exit 1
+fi
+
+REPO_USER="obiwankenobi777"
+TOKEN=$(cat "$HOME/.code/git/token")
+BASE_URL="https://$REPO_USER:$TOKEN@github.com/$REPO_USER"
+
+print_url() {
+  local repo="$1"
+  echo "$BASE_URL/$repo"
+}
+
+menu() {
+  echo "What do you wish Mr. $USER!?"
+  echo "a -> Show The URL of a given repository."
+  echo "q -> Exit!"
+
+  echo -n "Choise an option: "
+}
+
+main() {
+  menu
+  read option
+  case $option in
+    a)
+      read -p "Agora digite o nome do repositorio: " repo
+      print_url $repo
+      ;;
+    q)
+      echo "Leaving ..."
+      exit 0
+      ;;
+    *)
+      echo "Opção inválida!"
+      ;;
+  esac
+}
+main

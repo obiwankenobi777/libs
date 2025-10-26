@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+STR="IAN, estude incansavelmente e acredite na vitória do Evangelho sobre a Terra.";
+echo -e "\033[1;36m $STR \033[0m"
+echo -e "\033[1;36m I have no limitations \033[0m"
