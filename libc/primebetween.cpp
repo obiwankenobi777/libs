@@ -1,6 +1,6 @@
 #include <iostream>
-#include <cmath>
 #include <ctime>
+
 int main() {
     std::cout << "Enter the starting number: ";
     int start;
