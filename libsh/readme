@@ -1,15 +1,15 @@
 #!/usr/bin/bash
 
-readme() { 
-    if [ -f "readme" ]; then
-        helix readme;
+readme() {
+    if [[ -f "readme" ]]; then
+        vim readme
     else
-        if [ -f "README" ]; then
-            helix README;
+        if [[ -f "README" ]]; then
+            vim README
         else
-            echo "Nenhum arquivo 'readme' ou 'README' encontrado, criando 'README'...";
-            helix README;
-        fi;
+            echo "Nenhum arquivo 'readme' ou 'README' encontrado, criando 'README'..."
+            vim README
+        fi
     fi
 }
 readme
