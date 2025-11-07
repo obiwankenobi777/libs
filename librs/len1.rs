@@ -1,4 +1,5 @@
 use std::env;
+
 fn main() {
     let args:Vec<String> = env::args().collect();
 
@@ -9,6 +10,7 @@ fn main() {
 
     let mut i: usize = 1;
     let mut sum: usize = 0;
+
     while i < args.len() {
         println!("[{i}] {} -> {}", args[i], args[i].len());
         sum += args[i].len();

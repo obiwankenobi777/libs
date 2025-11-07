@@ -1,4 +1,5 @@
 use std::env;
+
 fn main() {
     let args: Vec<String> = env::args().collect();
 
@@ -20,6 +21,7 @@ fn main() {
     let mut count: i64 = 0;
     let mut n: i128 = 2;
     let mut divisors: Vec<i128> = Vec::new();
+
     while n < number {
         if number % n == 0 {
             count += 1;
@@ -27,6 +29,7 @@ fn main() {
         }
         n += 1;
     }
+
     if count > 0 {
         println!("The number {} isn't a prime number!", number);
         println!("\nTotal divisors: {}", divisors.len());

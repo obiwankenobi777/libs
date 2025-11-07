@@ -7,12 +7,14 @@ fn gcd(u: u128, v: u128) -> u128 {
         u
     }
 } 
+
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() < 3 {
         eprintln!("ERROR!\nTwo parameters are required!");
         std::process::exit(1);
     }
+
     let u = match args[1].trim().parse::<u128>() {
         Ok(n) => n,
         Err(_) => {
@@ -20,6 +22,7 @@ fn main() {
             std::process::exit(1);
         },
     };
+
     let v = match args[2].trim().parse::<u128>() {
         Ok(n) => n,
         Err(_) => {

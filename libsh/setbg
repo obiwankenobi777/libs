@@ -1,20 +1,20 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
-file="$HOME/.config/sway/config"
+FILE="$HOME/.config/sway/config"
 
 if [[ $# -eq 0 ]]; then
-    sed -n '27p' "$file"
+    sed -n '27p' "$FILE"
 
 elif [[ $# -eq 1 ]]; then
-    sed -i "27s/[0-9]\{1,2\}/$1/" "$file"
-    sed -n '27p' "$file"
+    sed -i "27s/[0-9]\{1,2\}/$1/" "$FILE"
+    sed -n '27p' "$FILE"
     
 elif [[ $# -ne 3 ]]; then
     echo "Parâmetros insuficientes"
     exit 1
 
 else
-    sed -i "27s/$1/$2/" "$file"
-    sed -i "27s/[0-9]\{1,2\}/$3/" "$file"
-    sed -n '27p' "$file"
+    sed -i "27s/$1/$2/" "$FILE"
+    sed -i "27s/[0-9]\{1,2\}/$3/" "$FILE"
+    sed -n '27p' "$FILE"
 fi
