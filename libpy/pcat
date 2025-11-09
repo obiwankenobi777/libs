@@ -1,0 +1,30 @@
+#!/usr/bin/python
+
+from sys import argv
+
+def read_file(name: str) -> dict:
+	count = 0
+	info = []
+	with open(name, "r") as f:
+		for line in f:
+			print(f"Line[{count+1}]::Size[{len(line)}] -> {line}", end="")
+			count += 1
+			info.append(len(line))
+
+	info_file = {}
+	info_file['Lines'] = count
+	info_file['Chars'] = sum(info)
+	info_file['Max_Column'] = max(info)
+
+	return info_file
+
+def main():
+	for i in range(1, len(argv)):
+		print(f":::::::\n {argv[i]}\n:::::::")
+		file = read_file(argv[i])
+		print(f"Lines: {file['Lines']}\nChars: {file['Chars']}")
+		print(f"Max_Column: {file['Max_Column']}")
+		print()
+
+if __name__ == "__main__":
+    main()
