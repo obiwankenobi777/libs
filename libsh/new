@@ -18,7 +18,7 @@ ln -s $PWD/$1 $HOME/.local/bin/foo
 read -p "Deseja abrir o arquivo? sim ou não(s ou n)? " v
 case $v in
     's' | 'S')
-        helix "$1"
+        vim "$1"
         ;;
     'n' | 'N')
         ;;
