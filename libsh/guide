@@ -19,14 +19,8 @@ elif [[ $1 = "sh" ]] || [[ $1 = "bash" ]]; then
 elif [[ $1 = "rs" ]] || [[ $1 = "rust" ]]; then
     less "$HOME/.code/guides/rs"
 
-elif [[ $1 = "py" ]] || [[ $1 = "python" ]]; then
-    less "$HOME/.code/guides/py"
-
 elif [[ $1 == "js" ]] || [[ $1 == "javascript" ]]; then
     less "$HOME/.code/guides/js"
-
-elif [[ $1 = "std" ]]; then
-    less "$HOME/.code/guides/std"
 
 elif [[ $1 = "lua" ]]; then
     less "$HOME/.code/guide/lua"

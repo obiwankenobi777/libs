@@ -10,12 +10,10 @@ elif [[ -f $1.c ]]; then
 elif [[ -f $1.cpp ]]; then
     g++ -Wall -Wextra -Wpedantic -O2 -std=c++23 -o "$1" "$1".cpp
 
-elif [[ -f $1.rs ]]; then
-    rustc "$1.rs"
-
 elif [[ ! -f $1.c ]] && [[ ! -f $1.cpp ]]; then
     echo "Arquivo nao encontrado" >&2
     exit 1
 
 fi
+
 exit 0
