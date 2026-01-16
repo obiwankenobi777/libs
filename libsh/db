@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+menu() {
+    echo "What do you wish Mr. $USER!?"
+    echo "s -> Show to database."
+    echo "i -> Insert data on the database."
+    echo "u -> Update to database."
+    echo "q -> Exit"
+
+    echo -n "Choise an option: "
+}
+
+main() {
+    menu
+
+    read todo
+    case "$todo" in
+        s)
+            echo "Show databe"
+            cd $HOME/projects/db
+            sqlite3 < show.sql
+            cd $OLDPWD
+            ;;
+        i)
+            echo "Inserto data"
+            cd $HOME/projects/db
+            vim insert.sql
+            cd $OLDPWD
+            ;;
+        u)
+            echo "Update data"
+            cd $HOME/projects/db
+            vim update.sql
+            cd $OLDPWD
+            ;;
+        q)
+            echo "Leave me alone"
+            exit 0
+            ;;
+        *)
+            echo "Invalid Input"
+            exit 1
+            ;;
+    esac
+}
+main
