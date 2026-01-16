@@ -5,7 +5,10 @@ if [[ $# -eq 0 ]]; then
     exit 1
 fi
 
-MAN="$HOME/.code/guides/$1"
+# MAN="$HOME/.code/guides/$1"
+path=$(find $HOME/books -name "guides") 
+cd $path
+MAN="$path/$1"
 
 if [[ -e $MAN ]]; then
     less "$MAN"
@@ -25,8 +28,8 @@ elif [[ $1 == "js" ]] || [[ $1 == "javascript" ]]; then
 elif [[ $1 = "lua" ]]; then
     less "$HOME/.code/guide/lua"
 
-elif [[ $1 = "vi" ]]; then
-    less "$HOME/.code/guide/vi"
+elif [[ $1 = "vi" ]] || [[ $1 = "vim" ]] then
+    less "$HOME/.code/guide/vim"
 
 else 
     echo "Doesn't exists MAN of $1"

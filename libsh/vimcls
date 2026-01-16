@@ -1,3 +1,5 @@
 #!/usr/bin/bash
 
 rm -v ~/.cache/vim/swap/*
+rm -v ~/.local/state/nvim/swap/*
+rm -v ~/.local/state/nvim/undo/*
