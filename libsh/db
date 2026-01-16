@@ -31,6 +31,7 @@ main() {
             (
                 cd $pathDB || exit 1
                 vim insert.sql
+                sqlite3 < insert.sql
             )
             ;;
         u)
@@ -38,6 +39,7 @@ main() {
             (
                 cd $pathDB || exit 1
                 vim update.sql
+                sqlite3 < update.sql
             )
             ;;
         q)
