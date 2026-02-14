@@ -6,7 +6,7 @@ if [[ $# -eq 0 ]]; then
 fi
 
 # MAN="$HOME/.code/guides/$1"
-path=$(find $HOME/books -name "guides") 
+path=$(find $HOME/.config/code/ -name "guides") 
 cd $path
 MAN="$path/$1"
 

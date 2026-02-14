@@ -4,9 +4,10 @@ set -euo pipefail
 
 menu() {
     echo "What do you wish Mr. $USER!?"
-    echo "s -> Show to database."
-    echo "i -> Insert data on the database."
-    echo "u -> Update to database."
+    echo "s -> Show The DataBase."
+    echo "i -> Insert data on the DataBase."
+    echo "u -> Update to DataBase."
+    echo "d -> Delete some data from the DataBase"
     echo "q -> Exit"
 
     echo -n "Choise an option: "
@@ -20,17 +21,17 @@ main() {
     read -r todo
     case "$todo" in
         s)
-            echo "Show databe"
+            echo "Show DataBase"
             (
                 cd $pathDB || exit 1
                 sqlite3 < show.sql
             )
             ;;
         i)
-            echo "Inserto data"
+            echo "Insert data"
             (
                 cd $pathDB || exit 1
-                vim insert.sql
+                vim insert.sql +4
                 sqlite3 < insert.sql
             )
             ;;
@@ -38,8 +39,17 @@ main() {
             echo "Update data"
             (
                 cd $pathDB || exit 1
-                vim update.sql
+                vim update.sql +4
                 sqlite3 < update.sql
+            )
+            ;;
+
+        d)
+            echo "Delete something"
+            (
+                cd $pathDB || exit 1
+                vim delete.sql +3
+                sqlite3 < delete.sql
             )
             ;;
         q)

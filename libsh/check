@@ -1,7 +1,0 @@
-#!/usr/bin/bash
-
-if [[ $1 = $2 ]]; then
-    echo "They are equals!";
-else 
-    echo "They are not equals!";
-fi

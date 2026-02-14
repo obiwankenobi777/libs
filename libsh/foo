@@ -1,6 +1,0 @@
-#!/usr/bin/bash
-
-read -p "What do you want to do?\n" var
-echo "Print para printar"
-case $var in
-
